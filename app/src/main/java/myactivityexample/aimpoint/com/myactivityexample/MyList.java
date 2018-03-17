@@ -15,6 +15,8 @@ public class MyList extends AppCompatActivity {
     ListView lv;
     String []countries = {"India","China","Pakistan"};
     int[]flags ={R.drawable.indianflag,R.drawable.chinaflag,R.drawable.pakflag};
+
+    String []countryDesc={"Country of rivers","testing data","helo "};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +27,7 @@ public class MyList extends AppCompatActivity {
 
        // ArrayAdapter<String>ar = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,countries);
 
-        CountryFlagAdapter cf =new CountryFlagAdapter(this,countries,flags);
+        CountryFlagAdapter cf =new CountryFlagAdapter(this,countries,flags,countryDesc);
         lv.setAdapter(cf);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

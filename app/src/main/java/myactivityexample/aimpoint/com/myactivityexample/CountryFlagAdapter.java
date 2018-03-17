@@ -18,11 +18,13 @@ public class CountryFlagAdapter extends BaseAdapter {
     String[]countries;
     int[]flags;
     Context con;
-    public CountryFlagAdapter(Context c ,String[]coun,int[]f)
+    String counDesc[];
+    public CountryFlagAdapter(Context c ,String[]coun,int[]f,String []cD)
     {
         con=c;
         countries=coun;
         flags=f;
+        counDesc=cD;
     }
 
     @Override
@@ -48,6 +50,8 @@ public class CountryFlagAdapter extends BaseAdapter {
         View v = li.inflate(R.layout.row_view,null);
         ImageView iv =v.findViewById(R.id.myFlagImageView);
         TextView counTV = v.findViewById(R.id.countryTV);
+        TextView counDTV =v.findViewById(R.id.txtDescTV);
+        counDTV.setText(counDesc[i]);
         iv.setImageDrawable(con.getResources().getDrawable(flags[i]));
         counTV.setText(countries[i]);
 
