@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * Created by pc on 17-03-2018.
@@ -15,21 +18,17 @@ import android.widget.TextView;
 
 public class CountryFlagAdapter extends BaseAdapter {
 
-    String[]countries;
-    int[]flags;
     Context con;
-    String counDesc[];
-    public CountryFlagAdapter(Context c ,String[]coun,int[]f,String []cD)
+    ArrayList<Country> countryList;
+    public CountryFlagAdapter(Context c ,ArrayList<Country>cList)
     {
         con=c;
-        countries=coun;
-        flags=f;
-        counDesc=cD;
+        countryList=cList;
     }
 
     @Override
     public int getCount() {
-        return countries.length;
+        return countryList.size();
     }
 
     @Override
@@ -51,9 +50,18 @@ public class CountryFlagAdapter extends BaseAdapter {
         ImageView iv =v.findViewById(R.id.myFlagImageView);
         TextView counTV = v.findViewById(R.id.countryTV);
         TextView counDTV =v.findViewById(R.id.txtDescTV);
-        counDTV.setText(counDesc[i]);
-        iv.setImageDrawable(con.getResources().getDrawable(flags[i]));
-        counTV.setText(countries[i]);
+        TextView popTV =v.findViewById(R.id.popTV);
+        Country c = countryList.get(i);
+        counDTV.setText(c.getDescription());
+        iv.setImageDrawable(con.getResources().getDrawable(c.getFlag()));
+        counTV.setText(c.getName());
+        popTV.setText(c.getPopulation()+"");
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(con,"You have clicked list view item",Toast.LENGTH_LONG).show();
+            }
+        });
 
         return v;
     }

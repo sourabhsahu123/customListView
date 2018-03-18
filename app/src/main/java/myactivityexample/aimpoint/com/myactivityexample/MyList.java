@@ -10,13 +10,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 public class MyList extends AppCompatActivity {
 
     ListView lv;
-    String []countries = {"India","China","Pakistan"};
-    int[]flags ={R.drawable.indianflag,R.drawable.chinaflag,R.drawable.pakflag};
-
-    String []countryDesc={"Country of rivers","testing data","helo "};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +25,29 @@ public class MyList extends AppCompatActivity {
 
        // ArrayAdapter<String>ar = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,countries);
 
-        CountryFlagAdapter cf =new CountryFlagAdapter(this,countries,flags,countryDesc);
+        ArrayList<Country>cList = new ArrayList<Country>();
+        Country c1 = new Country();
+        c1.setName("India");
+        c1.setFlag(R.drawable.indianflag);
+        c1.setDescription("Country of Rivers");
+        c1.setPopulation(1250000000);
+
+        Country c2 = new Country();
+        c2.setName("Pakistan");
+        c2.setFlag(R.drawable.pakflag);
+        c2.setDescription("Country of Mosque");
+        c2.setPopulation(1250000000);
+
+        Country c3 = new Country();
+        c3.setName("Aus");
+        c3.setFlag(R.drawable.indianflag);
+        c3.setDescription("Countinent");
+        c3.setPopulation(1250000000);
+
+        cList.add(c1);
+        cList.add(c2);
+        cList.add(c3);
+        CountryFlagAdapter cf =new CountryFlagAdapter(this,cList);
         lv.setAdapter(cf);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

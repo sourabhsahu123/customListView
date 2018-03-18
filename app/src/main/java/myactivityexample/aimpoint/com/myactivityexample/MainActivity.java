@@ -25,9 +25,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText firstNo,secondNo;
-    Button showMyContentBtn;
+    Button showMyContentBtn,showMyGrdBtn;
     Button addBtn,showMyListBtn;
-    TextView res;
+    TextView res,welcomeTV;
     LinearLayout ll;
     Context con;
     AutoCompleteTextView countryNameACTV;
@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         con=this;
+
+        String name =getIntent().getStringExtra("USERNAME");
+
         firstNo=(EditText) findViewById(R.id.firstNumber);
         secondNo=(EditText)findViewById(R.id.secondNumber);
         addBtn=(Button)findViewById(R.id.addBtn);
@@ -44,6 +47,24 @@ public class MainActivity extends AppCompatActivity {
         ll=(LinearLayout)findViewById(R.id.ll);
         showMyContentBtn=(Button)findViewById(R.id.showMyContentBtn);
         showMyListBtn=(Button)findViewById(R.id.showMyListBtn);
+        Button showMySpnBtn=(Button)findViewById(R.id.showMySpnBtn);
+        welcomeTV=(TextView)findViewById(R.id.welcomeTV);
+        welcomeTV.setText("Welcome "+name+"!!!!!!!");
+        showMySpnBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,SpinnerExample.class);
+                startActivity(i);
+            }
+        });
+        showMyGrdBtn=(Button)findViewById(R.id.grdViewBtn);
+        showMyGrdBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,GridViewActivity.class);
+                startActivity(i);
+            }
+        });
         showMyListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        ll.setBackgroundColor(Color.BLUE);
+      //  ll.setBackgroundColor(Color.BLUE);
         //ll.setBackgroundColor(new Color(255,0,0));
 
         Log.i("MainActivity","I am in onCreate");

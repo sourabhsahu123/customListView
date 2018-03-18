@@ -7,118 +7,146 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="myactivityexample.aimpoint.com.myactivityexample.MainActivity"
     tools:showIn="@layout/activity_main">
+    <TextView
+        android:id="@+id/welcomeTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name" />
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-<LinearLayout
-    android:paddingLeft="100dp"
-    android:id="@+id/ll"
-    android:background="#8fa92f"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_marginTop="100dp"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
         <LinearLayout
+            android:id="@+id/ll"
             android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="@string/app_name"
-            android:layout_height="wrap_content" />
-<EditText
-    android:inputType="number"
-    android:text="10"
-    android:layout_marginLeft="50dp"
-    android:layout_width="wrap_content"
-    android:id="@+id/firstNumber"
-    android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="100dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name" />
+
+                    <EditText
+                        android:id="@+id/firstNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:inputType="number"
+                        android:text="10" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Second No:" />
+
+                    <EditText
+                        android:id="@+id/secondNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:inputType="number"
+                        android:text="10" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/addBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add " />
+
+            <TextView
+                android:id="@+id/res"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <AutoCompleteTextView
+                android:id="@+id/countryNameACTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Type here for country!!!!!!!!!" />
+
+            <Button
+                android:id="@+id/showMyContentBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show My Content" />
+
+            <Button
+                android:id="@+id/showMyListBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show My List" />
+
+            <Button
+                android:id="@+id/grdViewBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show My GridView" />
+
+            <Button
+                android:id="@+id/showMySpnBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show My Spinner" />
+
+            <Button
+                android:id="@+id/showMyContentBtn6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show My Content" />
+
+            <Button
+                android:id="@+id/showMyContentBtn5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show My Content" />
+
+            <Button
+                android:id="@+id/showMyContentBtn4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show My Content" />
+
+            <Button
+                android:id="@+id/showMyContentBtn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show My Content" />
+
+            <Button
+                android:id="@+id/showMyContentBtn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show My Content" />
+
+            <Button
+                android:id="@+id/showMyContentBtn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show My Content" />
         </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="Second No:"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:text="10"
-            android:inputType="number"
-            android:layout_marginLeft="50dp"
-            android:layout_width="wrap_content"
-            android:id="@+id/secondNumber"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    </LinearLayout>
-    <Button
-        android:id="@+id/addBtn"
-        android:layout_width="wrap_content"
-        android:text="Add "
-        android:layout_height="wrap_content" />
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/res"
-        android:layout_height="wrap_content" />
-    <AutoCompleteTextView
-        android:layout_width="match_parent"
-        android:id="@+id/countryNameACTV"
-        android:text="Type here for country!!!!!!!!!"
-        android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="wrap_content"
-        android:text="Show My Content"
-        android:id="@+id/showMyContentBtn"
-        android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="wrap_content"
-        android:text="Show My List"
-        android:id="@+id/showMyListBtn"
-        android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="wrap_content"
-        android:text="Show My Content"
-        android:id="@+id/showMyContentBtn8"
-        android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="wrap_content"
-        android:text="Show My Content"
-        android:id="@+id/showMyContentBtn7"
-        android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="wrap_content"
-        android:text="Show My Content"
-        android:id="@+id/showMyContentBtn6"
-        android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="wrap_content"
-        android:text="Show My Content"
-        android:id="@+id/showMyContentBtn5"
-        android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="wrap_content"
-        android:text="Show My Content"
-        android:id="@+id/showMyContentBtn4"
-        android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="wrap_content"
-        android:text="Show My Content"
-        android:id="@+id/showMyContentBtn3"
-        android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="wrap_content"
-        android:text="Show My Content"
-        android:id="@+id/showMyContentBtn2"
-        android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="wrap_content"
-        android:text="Show My Content"
-        android:id="@+id/showMyContentBtn1"
-        android:layout_height="wrap_content" />
-</LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
